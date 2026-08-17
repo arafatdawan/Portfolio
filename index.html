@@ -1,213 +1,828 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2685.6">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
-    span.Apple-tab-span {white-space:pre}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Arafat Dawan - Digital Marketing, Social Media and Digital Content Manager.">
+    <meta name="author" content="Arafat Dawan">
+
+    <title>Arafat Dawan | Digital Marketing & Media</title>
+
+    <style>
+        :root {
+            --bg: #0b1120;
+            --bg-secondary: #111827;
+            --card: rgba(30, 41, 59, 0.72);
+            --accent: #38bdf8;
+            --accent-dark: #0284c7;
+            --text: #f8fafc;
+            --muted: #94a3b8;
+            --border: rgba(148, 163, 184, 0.15);
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            background:
+                radial-gradient(circle at top right, rgba(56, 189, 248, 0.12), transparent 30%),
+                var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        /* NAVBAR */
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(11, 17, 32, 0.85);
+            backdrop-filter: blur(14px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav-container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 16px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: var(--accent);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--muted);
+            font-size: 0.95rem;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        /* HERO */
+
+        .hero {
+            min-height: 85vh;
+            max-width: 1100px;
+            margin: auto;
+            padding: 100px 24px 80px;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hello {
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 12px;
+            letter-spacing: 1px;
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 8vw, 5.5rem);
+            line-height: 1.05;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: var(--accent);
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.2rem, 3vw, 1.6rem);
+            color: var(--muted);
+            margin-bottom: 20px;
+        }
+
+        .hero-description {
+            max-width: 700px;
+            color: #cbd5e1;
+            font-size: 1.05rem;
+            margin-bottom: 30px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 22px;
+            border-radius: 8px;
+            font-weight: 700;
+            transition: 0.3s;
+            border: 1px solid var(--border);
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: #020617;
+        }
+
+        .btn-primary:hover {
+            background: #7dd3fc;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            color: var(--text);
+            background: rgba(255,255,255,0.03);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        /* GENERAL */
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 0 24px;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            margin-bottom: 45px;
+        }
+
+        .section-title span {
+            color: var(--accent);
+            font-size: 0.9rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .section-title h2 {
+            font-size: 2.2rem;
+            margin-top: 8px;
+        }
+
+        .section-title p {
+            color: var(--muted);
+            margin-top: 8px;
+        }
+
+        /* ABOUT */
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1.4fr 1fr;
+            gap: 30px;
+        }
+
+        .card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 30px;
+            backdrop-filter: blur(10px);
+        }
+
+        .about-text {
+            color: #cbd5e1;
+        }
+
+        .about-text p + p {
+            margin-top: 15px;
+        }
+
+        .info-list {
+            list-style: none;
+        }
+
+        .info-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .info-list li:last-child {
+            border-bottom: none;
+        }
+
+        .info-list strong {
+            color: var(--accent);
+            display: block;
+            font-size: 0.85rem;
+        }
+
+        /* EXPERIENCE */
+
+        .timeline {
+            position: relative;
+            margin-left: 12px;
+            border-left: 2px solid rgba(56, 189, 248, 0.3);
+            padding-left: 35px;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 40px;
+        }
+
+        .timeline-item::before {
+            content: "";
+            position: absolute;
+            width: 13px;
+            height: 13px;
+            border-radius: 50%;
+            background: var(--accent);
+            left: -43px;
+            top: 7px;
+            box-shadow: 0 0 15px rgba(56, 189, 248, 0.5);
+        }
+
+        .timeline-date {
+            color: var(--accent);
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .timeline-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+
+        .timeline-company {
+            color: var(--muted);
+            margin-bottom: 10px;
+        }
+
+        .timeline-description {
+            color: #cbd5e1;
+        }
+
+        /* SKILLS */
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .skill {
+            background: var(--card);
+            border: 1px solid var(--border);
+            padding: 22px;
+            border-radius: 12px;
+            transition: 0.3s;
+        }
+
+        .skill:hover {
+            transform: translateY(-5px);
+            border-color: rgba(56, 189, 248, 0.5);
+        }
+
+        .skill h3 {
+            color: var(--accent);
+            margin-bottom: 7px;
+        }
+
+        .skill p {
+            color: var(--muted);
+            font-size: 0.95rem;
+        }
+
+        /* EDUCATION */
+
+        .education-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .education-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            padding: 28px;
+            border-radius: 15px;
+        }
+
+        .education-card h3 {
+            margin-bottom: 8px;
+        }
+
+        .education-card .degree {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        .education-card p {
+            color: var(--muted);
+            margin-top: 8px;
+        }
+
+        /* CONTACT */
+
+        .contact-box {
+            text-align: center;
+            padding: 60px 30px;
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(56, 189, 248, 0.12),
+                    rgba(30, 41, 59, 0.7)
+                );
+            border: 1px solid var(--border);
+            border-radius: 20px;
+        }
+
+        .contact-box h2 {
+            font-size: 2.3rem;
+            margin-bottom: 12px;
+        }
+
+        .contact-box p {
+            color: var(--muted);
+            margin-bottom: 25px;
+        }
+
+        .social-links {
+            margin-top: 25px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .social-links a {
+            color: var(--muted);
+            transition: 0.3s;
+        }
+
+        .social-links a:hover {
+            color: var(--accent);
+        }
+
+        /* FOOTER */
+
+        footer {
+            border-top: 1px solid var(--border);
+            text-align: center;
+            padding: 30px 20px;
+            color: var(--muted);
+            font-size: 0.9rem;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 800px) {
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero {
+                min-height: 75vh;
+                padding-top: 70px;
+            }
+
+            .about-grid,
+            .education-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            section {
+                padding: 60px 0;
+            }
+        }
+
+        @media (max-width: 520px) {
+
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .card,
+            .education-card,
+            .skill {
+                padding: 22px;
+            }
+
+            .hero {
+                padding-top: 50px;
+            }
+        }
+    </style>
 </head>
+
 <body>
-<p class="p1">&lt;!DOCTYPE html&gt;</p>
-<p class="p1">&lt;html lang="en"&gt;</p>
-<p class="p1">&lt;head&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;title&gt;Arafat Dawan | Portfolio&lt;/title&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;style&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>:root {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>--bg-color: #0f172a;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>--card-bg: #1e293b;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>--accent-color: #38bdf8;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>--text-main: #f8fafc;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>--text-muted: #94a3b8;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>* {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>box-sizing: border-box;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin: 0;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 0;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>body {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background-color: var(--bg-color);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: var(--text-main);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>line-height: 1.6;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 20px;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>header {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>max-width: 900px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin: 40px auto 20px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>text-align: center;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>h1 {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 2.5rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: var(--accent-color);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 8px;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.subtitle {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1.2rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: var(--text-muted);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 20px;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>nav {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>justify-content: center;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>gap: 15px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 40px;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>nav a {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: var(--text-main);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>text-decoration: none;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 8px 16px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 20px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background: var(--card-bg);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>transition: background 0.3s;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>nav a:hover {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background: var(--accent-color);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: var(--bg-color);</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>section {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>max-width: 900px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin: 0 auto 40px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background: var(--card-bg);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 30px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 12px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>h2 {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-bottom: 2px solid var(--accent-color);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding-bottom: 8px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 20px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: var(--accent-color);</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.timeline-item {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 20px;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.timeline-title {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-weight: bold;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1.1rem;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.timeline-date {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: var(--text-muted);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 0.9rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 5px;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.skills-grid {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>display: grid;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));</p>
-<p class="p1"><span class="Apple-converted-space">            </span>gap: 12px;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.skill-card {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background: rgba(255, 255, 255, 0.05);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 12px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 8px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>text-align: center;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border: 1px solid rgba(255, 255, 255, 0.1);</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.contact-btn {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>display: inline-block;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background: var(--accent-color);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: var(--bg-color);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 12px 24px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 6px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>text-decoration: none;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-weight: bold;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-top: 10px;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>footer {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>text-align: center;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: var(--text-muted);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 0.9rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-top: 40px;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</p>
-<p class="p1">&lt;/head&gt;</p>
-<p class="p1">&lt;body&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;header&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;h1&gt;Arafat Dawan&lt;/h1&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;p class="subtitle"&gt;Digital Marketing &amp; Social Media Specialist | Content Strategist&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;nav&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;a href="#about"&gt;About&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;a href="#experience"&gt;Experience&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;a href="#skills"&gt;Skills&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;a href="#contact"&gt;Contact&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/nav&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/header&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;section id="about"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;h2&gt;About Me&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;Results-driven Digital Marketing and Social Media Manager specializing in audience growth, campaign strategy, and brand execution. Experienced in driving digital engagement and directing content strategy across global audiences.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;section id="experience"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;h2&gt;Experience &amp; Education&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="timeline-item"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="timeline-title"&gt;Digital Content Manager — Desh Television&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="timeline-date"&gt;2024 – 2025&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;p&gt;Led digital strategy, audience engagement initiatives, and multi-channel campaigns.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-tab-span">	</span>&lt;div class="timeline-item"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="timeline-title"&gt;In Charge (Digital Content Management ) — Somoy Media Limited&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="timeline-date"&gt;2021 – 2024&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;p&gt;Led digital strategy, audience engagement initiatives, and multi-channel campaigns.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="timeline-item"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="timeline-title"&gt;M.A. in Film and Media&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="timeline-date"&gt;University of Copenhagen&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="timeline-item"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="timeline-title"&gt;B.Sc. in Computer Science and Engineering&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="timeline-date"&gt;Bangladesh University of Business and Technology&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;section id="skills"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;h2&gt;Core Competencies&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="skills-grid"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="skill-card"&gt;Digital Strategy&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="skill-card"&gt;Social Media Management&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="skill-card"&gt;Content Direction&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="skill-card"&gt;Front-End Web Basics&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="skill-card"&gt;Brand PR Campaigns&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="skill-card"&gt;Audience Analytics&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;section id="contact"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;h2&gt;Get in Touch&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;Interested in collaborating or discussing media opportunities?&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;a href="mail to: -dawanprem@gmail.com class="contact-btn" &lt;a href="m Contact number: +45 91456838 class="contact-btn" &gt;Send Message&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;footer&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;&amp;copy; 2026 Arafat Dawan. All rights reserved. Hosted on arafatdawan.info.bd&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/footer&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;/body&gt;</p>
-<p class="p1">&lt;/html&gt;</p>
+
+    <!-- NAVIGATION -->
+
+    <nav>
+        <div class="nav-container">
+            <div class="logo">Arafat Dawan</div>
+
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <!-- HERO -->
+
+    <header class="hero">
+        <div class="hero-content">
+
+            <div class="hello">
+                HELLO, I'M
+            </div>
+
+            <h1>
+                Arafat <span>Dawan</span>
+            </h1>
+
+            <div class="hero-subtitle">
+                Digital Marketing & Social Media Manager
+            </div>
+
+            <p class="hero-description">
+                Digital media professional with 5+ years of experience in
+                digital content management, social media strategy, audience
+                engagement, SEO, PR campaigns and digital marketing.
+            </p>
+
+            <div class="buttons">
+                <a href="#experience" class="btn btn-primary">
+                    View My Experience
+                </a>
+
+                <a href="mailto:dawanprem@gmail.com" class="btn btn-secondary">
+                    Contact Me
+                </a>
+            </div>
+
+        </div>
+    </header>
+
+
+    <main>
+
+        <!-- ABOUT -->
+
+        <section id="about">
+            <div class="container">
+
+                <div class="section-title">
+                    <span>About Me</span>
+                    <h2>Digital Media Professional</h2>
+                </div>
+
+                <div class="about-grid">
+
+                    <div class="card about-text">
+
+                        <p>
+                            I am a Digital Marketing and Social Media Manager
+                            with extensive experience in digital content,
+                            audience engagement, social media strategy and
+                            online marketing.
+                        </p>
+
+                        <p>
+                            My professional background includes working with
+                            leading media organizations in Bangladesh, where
+                            I have worked on digital content strategy,
+                            social media platforms, SEO, analytics and
+                            audience growth.
+                        </p>
+
+                        <p>
+                            With a background in Computer Science and
+                            experience in media and communication, I combine
+                            technical knowledge with creative and strategic
+                            thinking.
+                        </p>
+
+                    </div>
+
+                    <div class="card">
+
+                        <ul class="info-list">
+
+                            <li>
+                                <strong>Specialization</strong>
+                                Digital Marketing & Social Media
+                            </li>
+
+                            <li>
+                                <strong>Experience</strong>
+                                5+ Years
+                            </li>
+
+                            <li>
+                                <strong>Industry</strong>
+                                Digital Media & Communications
+                            </li>
+
+                            <li>
+                                <strong>Email</strong>
+                                dawanprem@gmail.com
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- EXPERIENCE -->
+
+        <section id="experience">
+            <div class="container">
+
+                <div class="section-title">
+                    <span>Career</span>
+                    <h2>Professional Experience</h2>
+                    <p>
+                        My professional journey in digital media and content management.
+                    </p>
+                </div>
+
+                <div class="timeline">
+
+                    <div class="timeline-item">
+
+                        <div class="timeline-date">
+                            2024 – 2025
+                        </div>
+
+                        <div class="timeline-title">
+                            Digital Content Manager
+                        </div>
+
+                        <div class="timeline-company">
+                            Desh Television
+                        </div>
+
+                        <p class="timeline-description">
+                            Managed digital content operations, audience
+                            engagement initiatives and multi-platform digital
+                            campaigns. Worked on content strategy, social media
+                            distribution and digital audience development.
+                        </p>
+
+                    </div>
+
+
+                    <div class="timeline-item">
+
+                        <div class="timeline-date">
+                            2021 – 2024
+                        </div>
+
+                        <div class="timeline-title">
+                            In-Charge, Digital Content Management
+                        </div>
+
+                        <div class="timeline-company">
+                            Somoy Media Limited
+                        </div>
+
+                        <p class="timeline-description">
+                            Led digital content management across major social
+                            and video platforms. Worked on SEO, YouTube and
+                            Facebook content strategy, performance monitoring,
+                            analytics and audience engagement.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- SKILLS -->
+
+        <section id="skills">
+            <div class="container">
+
+                <div class="section-title">
+                    <span>Expertise</span>
+                    <h2>Skills & Capabilities</h2>
+                </div>
+
+                <div class="skills-grid">
+
+                    <div class="skill">
+                        <h3>Digital Marketing</h3>
+                        <p>
+                            Digital campaigns, audience growth and online
+                            marketing strategy.
+                        </p>
+                    </div>
+
+                    <div class="skill">
+                        <h3>Social Media</h3>
+                        <p>
+                            Facebook, YouTube and multi-platform social media
+                            management.
+                        </p>
+                    </div>
+
+                    <div class="skill">
+                        <h3>SEO</h3>
+                        <p>
+                            Search optimization, content optimization and
+                            performance analysis.
+                        </p>
+                    </div>
+
+                    <div class="skill">
+                        <h3>Content Strategy</h3>
+                        <p>
+                            Content planning, editorial strategy and audience-
+                            focused storytelling.
+                        </p>
+                    </div>
+
+                    <div class="skill">
+                        <h3>Analytics</h3>
+                        <p>
+                            Performance monitoring, audience insights and
+                            data-driven decision making.
+                        </p>
+                    </div>
+
+                    <div class="skill">
+                        <h3>PR & Campaigns</h3>
+                        <p>
+                            Digital PR campaigns, brand communication and
+                            audience engagement.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- EDUCATION -->
+
+        <section id="education">
+            <div class="container">
+
+                <div class="section-title">
+                    <span>Education</span>
+                    <h2>Academic Background</h2>
+                </div>
+
+                <div class="education-grid">
+
+                    <div class="education-card">
+
+                        <h3>Master's in Film and Media</h3>
+
+                        <div class="degree">
+                            University of Copenhagen
+                        </div>
+
+                        <p>
+                            Film, media, communication and contemporary
+                            digital media studies.
+                        </p>
+
+                    </div>
+
+
+                    <div class="education-card">
+
+                        <h3>
+                            B.Sc. in Computer Science and Engineering
+                        </h3>
+
+                        <div class="degree">
+                            Bangladesh University of Business and Technology
+                        </div>
+
+                        <p>
+                            Computer Science, software development and
+                            technology-focused studies.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- CONTACT -->
+
+        <section id="contact">
+            <div class="container">
+
+                <div class="contact-box">
+
+                    <h2>Let's Work Together</h2>
+
+                    <p>
+                        Interested in collaborating, discussing digital media
+                        opportunities or working on a new project?
+                    </p>
+
+                    <a
+                        href="mailto:dawanprem@gmail.com"
+                        class="btn btn-primary"
+                    >
+                        Send Me an Email
+                    </a>
+
+                    <div class="social-links">
+
+                        <!-- Replace these URLs with your actual profiles -->
+
+                        <a href="#" target="_blank">
+                            LinkedIn
+                        </a>
+
+                        <a href="#" target="_blank">
+                            Facebook
+                        </a>
+
+                        <a href="#" target="_blank">
+                            YouTube
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+        <p>
+            © 2026 Arafat Dawan. All Rights Reserved.
+        </p>
+    </footer>
+
 </body>
 </html>
