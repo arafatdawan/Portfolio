@@ -4,826 +4,2803 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description" content="Arafat Dawan - Digital Marketing, Social Media and Digital Content Manager.">
+    <title>Arafat Dawan — Digital Media Strategist</title>
+
+    <meta name="description" content="Arafat Dawan — Digital Media Strategist, Social Media Growth Specialist and Technology-Driven Storyteller based in Madrid, Spain.">
+
     <meta name="author" content="Arafat Dawan">
 
-    <title>Arafat Dawan | Digital Marketing & Media</title>
-
-    <style>
-        :root {
-            --bg: #0b1120;
-            --bg-secondary: #111827;
-            --card: rgba(30, 41, 59, 0.72);
-            --accent: #38bdf8;
-            --accent-dark: #0284c7;
-            --text: #f8fafc;
-            --muted: #94a3b8;
-            --border: rgba(148, 163, 184, 0.15);
-            --white: #ffffff;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-            background:
-                radial-gradient(circle at top right, rgba(56, 189, 248, 0.12), transparent 30%),
-                var(--bg);
-            color: var(--text);
-            line-height: 1.7;
-        }
-
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
-
-        /* NAVBAR */
-
-        nav {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            background: rgba(11, 17, 32, 0.85);
-            backdrop-filter: blur(14px);
-            border-bottom: 1px solid var(--border);
-        }
-
-        .nav-container {
-            max-width: 1100px;
-            margin: auto;
-            padding: 16px 24px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 1.3rem;
-            font-weight: 800;
-            color: var(--accent);
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 25px;
-            list-style: none;
-        }
-
-        .nav-links a {
-            color: var(--muted);
-            font-size: 0.95rem;
-            transition: 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: var(--accent);
-        }
-
-        /* HERO */
-
-        .hero {
-            min-height: 85vh;
-            max-width: 1100px;
-            margin: auto;
-            padding: 100px 24px 80px;
-            display: flex;
-            align-items: center;
-        }
-
-        .hero-content {
-            max-width: 800px;
-        }
-
-        .hello {
-            color: var(--accent);
-            font-weight: 600;
-            margin-bottom: 12px;
-            letter-spacing: 1px;
-        }
-
-        .hero h1 {
-            font-size: clamp(3rem, 8vw, 5.5rem);
-            line-height: 1.05;
-            margin-bottom: 20px;
-        }
-
-        .hero h1 span {
-            color: var(--accent);
-        }
-
-        .hero-subtitle {
-            font-size: clamp(1.2rem, 3vw, 1.6rem);
-            color: var(--muted);
-            margin-bottom: 20px;
-        }
-
-        .hero-description {
-            max-width: 700px;
-            color: #cbd5e1;
-            font-size: 1.05rem;
-            margin-bottom: 30px;
-        }
-
-        .buttons {
-            display: flex;
-            gap: 14px;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 12px 22px;
-            border-radius: 8px;
-            font-weight: 700;
-            transition: 0.3s;
-            border: 1px solid var(--border);
-        }
-
-        .btn-primary {
-            background: var(--accent);
-            color: #020617;
-        }
-
-        .btn-primary:hover {
-            background: #7dd3fc;
-            transform: translateY(-2px);
-        }
-
-        .btn-secondary {
-            color: var(--text);
-            background: rgba(255,255,255,0.03);
-        }
-
-        .btn-secondary:hover {
-            border-color: var(--accent);
-            color: var(--accent);
-        }
-
-        /* GENERAL */
-
-        .container {
-            max-width: 1100px;
-            margin: auto;
-            padding: 0 24px;
-        }
-
-        section {
-            padding: 80px 0;
-        }
-
-        .section-title {
-            margin-bottom: 45px;
-        }
-
-        .section-title span {
-            color: var(--accent);
-            font-size: 0.9rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        .section-title h2 {
-            font-size: 2.2rem;
-            margin-top: 8px;
-        }
-
-        .section-title p {
-            color: var(--muted);
-            margin-top: 8px;
-        }
-
-        /* ABOUT */
-
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1.4fr 1fr;
-            gap: 30px;
-        }
-
-        .card {
-            background: var(--card);
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 30px;
-            backdrop-filter: blur(10px);
-        }
-
-        .about-text {
-            color: #cbd5e1;
-        }
-
-        .about-text p + p {
-            margin-top: 15px;
-        }
-
-        .info-list {
-            list-style: none;
-        }
-
-        .info-list li {
-            padding: 12px 0;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .info-list li:last-child {
-            border-bottom: none;
-        }
-
-        .info-list strong {
-            color: var(--accent);
-            display: block;
-            font-size: 0.85rem;
-        }
-
-        /* EXPERIENCE */
-
-        .timeline {
-            position: relative;
-            margin-left: 12px;
-            border-left: 2px solid rgba(56, 189, 248, 0.3);
-            padding-left: 35px;
-        }
-
-        .timeline-item {
-            position: relative;
-            margin-bottom: 40px;
-        }
-
-        .timeline-item::before {
-            content: "";
-            position: absolute;
-            width: 13px;
-            height: 13px;
-            border-radius: 50%;
-            background: var(--accent);
-            left: -43px;
-            top: 7px;
-            box-shadow: 0 0 15px rgba(56, 189, 248, 0.5);
-        }
-
-        .timeline-date {
-            color: var(--accent);
-            font-size: 0.9rem;
-            font-weight: 600;
-            margin-bottom: 5px;
-        }
-
-        .timeline-title {
-            font-size: 1.25rem;
-            font-weight: 700;
-        }
-
-        .timeline-company {
-            color: var(--muted);
-            margin-bottom: 10px;
-        }
-
-        .timeline-description {
-            color: #cbd5e1;
-        }
-
-        /* SKILLS */
-
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 18px;
-        }
-
-        .skill {
-            background: var(--card);
-            border: 1px solid var(--border);
-            padding: 22px;
-            border-radius: 12px;
-            transition: 0.3s;
-        }
-
-        .skill:hover {
-            transform: translateY(-5px);
-            border-color: rgba(56, 189, 248, 0.5);
-        }
-
-        .skill h3 {
-            color: var(--accent);
-            margin-bottom: 7px;
-        }
-
-        .skill p {
-            color: var(--muted);
-            font-size: 0.95rem;
-        }
-
-        /* EDUCATION */
-
-        .education-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-        }
-
-        .education-card {
-            background: var(--card);
-            border: 1px solid var(--border);
-            padding: 28px;
-            border-radius: 15px;
-        }
-
-        .education-card h3 {
-            margin-bottom: 8px;
-        }
-
-        .education-card .degree {
-            color: var(--accent);
-            font-weight: 600;
-        }
-
-        .education-card p {
-            color: var(--muted);
-            margin-top: 8px;
-        }
-
-        /* CONTACT */
-
-        .contact-box {
-            text-align: center;
-            padding: 60px 30px;
-            background:
-                linear-gradient(
-                    135deg,
-                    rgba(56, 189, 248, 0.12),
-                    rgba(30, 41, 59, 0.7)
-                );
-            border: 1px solid var(--border);
-            border-radius: 20px;
-        }
-
-        .contact-box h2 {
-            font-size: 2.3rem;
-            margin-bottom: 12px;
-        }
-
-        .contact-box p {
-            color: var(--muted);
-            margin-bottom: 25px;
-        }
-
-        .social-links {
-            margin-top: 25px;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-
-        .social-links a {
-            color: var(--muted);
-            transition: 0.3s;
-        }
-
-        .social-links a:hover {
-            color: var(--accent);
-        }
-
-        /* FOOTER */
-
-        footer {
-            border-top: 1px solid var(--border);
-            text-align: center;
-            padding: 30px 20px;
-            color: var(--muted);
-            font-size: 0.9rem;
-        }
-
-        /* MOBILE */
-
-        @media (max-width: 800px) {
-
-            .nav-links {
-                display: none;
-            }
-
-            .hero {
-                min-height: 75vh;
-                padding-top: 70px;
-            }
-
-            .about-grid,
-            .education-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .skills-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-
-            section {
-                padding: 60px 0;
-            }
-        }
-
-        @media (max-width: 520px) {
-
-            .hero h1 {
-                font-size: 3rem;
-            }
-
-            .skills-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .card,
-            .education-card,
-            .skill {
-                padding: 22px;
-            }
-
-            .hero {
-                padding-top: 50px;
-            }
-        }
-    </style>
+    <meta property="og:title" content="Arafat Dawan — Digital Media Strategist">
+    <meta property="og:description" content="Digital Media Strategist & Technology-Driven Storyteller with 5+ years of experience in digital media, social growth, PR and audience development.">
+    <meta property="og:url" content="https://arafatdawan.info.bd">
+    <meta property="og:type" content="website">
+
+    <meta name="theme-color" content="#050505">
+
+    <link rel="canonical" href="https://arafatdawan.info.bd">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+
+<style>
+
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #050505;
+    color: #f5f5f5;
+    font-family: "DM Sans", sans-serif;
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    font-family: inherit;
+}
+
+::selection {
+    background: #fff;
+    color: #000;
+}
+
+:root {
+    --bg: #050505;
+    --surface: #0d0d0d;
+    --surface2: #111;
+    --border: rgba(255,255,255,.10);
+    --muted: #888;
+    --dim: #555;
+    --max: 1280px;
+}
+
+
+/* =========================================================
+   NOISE
+========================================================= */
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+
+    pointer-events: none;
+
+    opacity: .025;
+
+    z-index: 9999;
+
+    background-image:
+        url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+
+/* =========================================================
+   CUSTOM CURSOR
+========================================================= */
+
+.cursor {
+    position: fixed;
+
+    width: 9px;
+    height: 9px;
+
+    background: white;
+
+    border-radius: 50%;
+
+    pointer-events: none;
+
+    z-index: 10000;
+
+    transform: translate(-50%, -50%);
+
+    mix-blend-mode: difference;
+}
+
+@media(max-width: 900px) {
+    .cursor {
+        display: none;
+    }
+}
+
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+nav {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    z-index: 1000;
+
+    padding: 22px 30px;
+
+    transition: .4s ease;
+}
+
+nav.scrolled {
+    background: rgba(5,5,5,.82);
+
+    backdrop-filter: blur(20px);
+
+    border-bottom: 1px solid var(--border);
+}
+
+.nav-inner {
+    max-width: var(--max);
+
+    margin: auto;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+}
+
+.logo {
+    font-family: "Space Grotesk";
+
+    font-size: 24px;
+
+    font-weight: 700;
+
+    letter-spacing: -1.5px;
+}
+
+.logo span {
+    color: #777;
+}
+
+.nav-links {
+    display: flex;
+
+    align-items: center;
+
+    gap: 30px;
+}
+
+.nav-links a {
+    color: #999;
+
+    font-size: 13px;
+
+    transition: .3s;
+}
+
+.nav-links a:hover {
+    color: white;
+}
+
+.nav-contact {
+    border: 1px solid var(--border);
+
+    padding: 9px 16px;
+
+    border-radius: 100px;
+
+    color: white !important;
+}
+
+.nav-contact:hover {
+    background: white;
+
+    color: black !important;
+}
+
+.menu-btn {
+    display: none;
+
+    background: none;
+
+    border: 0;
+
+    color: white;
+
+    font-size: 22px;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+    min-height: 100vh;
+
+    display: flex;
+
+    align-items: center;
+
+    padding: 150px 30px 100px;
+
+    position: relative;
+}
+
+.hero-inner {
+    width: 100%;
+
+    max-width: var(--max);
+
+    margin: auto;
+}
+
+.location {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    border: 1px solid var(--border);
+
+    padding: 8px 14px;
+
+    border-radius: 100px;
+
+    color: #999;
+
+    font-size: 12px;
+
+    margin-bottom: 35px;
+}
+
+.location i {
+    color: #aaa;
+}
+
+.hero h1 {
+    font-family: "Space Grotesk";
+
+    font-weight: 600;
+
+    font-size: clamp(60px, 9vw, 135px);
+
+    line-height: .86;
+
+    letter-spacing: -7px;
+
+    max-width: 1100px;
+}
+
+.outline {
+    color: transparent;
+
+    -webkit-text-stroke: 1px rgba(255,255,255,.65);
+}
+
+.hero-sub {
+    margin-top: 55px;
+
+    max-width: 620px;
+
+    color: #999;
+
+    font-size: 18px;
+}
+
+.hero-sub strong {
+    color: white;
+}
+
+.hero-buttons {
+    margin-top: 30px;
+
+    display: flex;
+
+    gap: 10px;
+
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 13px 20px;
+
+    border-radius: 100px;
+
+    border: 1px solid var(--border);
+
+    font-size: 13px;
+
+    transition: .3s;
+}
+
+.btn-primary {
+    background: white;
+
+    color: black;
+
+    border-color: white;
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+}
+
+.btn-secondary:hover {
+    background: #111;
+}
+
+.scroll {
+    position: absolute;
+
+    bottom: 30px;
+
+    left: 30px;
+
+    color: #444;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   STATS
+========================================================= */
+
+.stats {
+    padding: 0 30px 120px;
+}
+
+.stats-grid {
+    max-width: var(--max);
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(4,1fr);
+
+    border-top: 1px solid var(--border);
+
+    border-bottom: 1px solid var(--border);
+}
+
+.stat {
+    padding: 40px 25px;
+
+    border-right: 1px solid var(--border);
+}
+
+.stat:last-child {
+    border-right: none;
+}
+
+.stat-number {
+    font-family: "Space Grotesk";
+
+    font-size: clamp(38px,5vw,65px);
+
+    letter-spacing: -4px;
+
+    line-height: 1;
+}
+
+.stat-label {
+    margin-top: 10px;
+
+    color: #666;
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   SECTIONS
+========================================================= */
+
+section {
+    padding: 130px 30px;
+}
+
+.container {
+    max-width: var(--max);
+
+    margin: auto;
+}
+
+.section-label {
+    color: #555;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+    margin-bottom: 25px;
+}
+
+.section-title {
+    font-family: "Space Grotesk";
+
+    font-size: clamp(45px,6vw,82px);
+
+    line-height: .94;
+
+    letter-spacing: -4px;
+
+    max-width: 950px;
+}
+
+.section-title span {
+    color: #555;
+}
+
+
+/* =========================================================
+   ABOUT
+========================================================= */
+
+.about-grid {
+    margin-top: 75px;
+
+    display: grid;
+
+    grid-template-columns: 1.1fr .9fr;
+
+    gap: 90px;
+}
+
+.about-text {
+    color: #999;
+
+    font-size: 18px;
+
+    max-width: 650px;
+}
+
+.about-text p + p {
+    margin-top: 25px;
+}
+
+.about-text strong {
+    color: white;
+}
+
+.about-list {
+    border-top: 1px solid var(--border);
+}
+
+.about-item {
+    display: flex;
+
+    justify-content: space-between;
+
+    padding: 18px 0;
+
+    border-bottom: 1px solid var(--border);
+
+    color: #666;
+
+    font-size: 13px;
+}
+
+.about-item span:last-child {
+    color: white;
+
+    text-align: right;
+}
+
+
+/* =========================================================
+   EXPERIENCE
+========================================================= */
+
+.experience {
+    background: #0a0a0a;
+}
+
+.timeline {
+    margin-top: 75px;
+
+    border-top: 1px solid var(--border);
+}
+
+.job {
+    display: grid;
+
+    grid-template-columns: 170px 1fr 150px;
+
+    gap: 40px;
+
+    padding: 50px 0;
+
+    border-bottom: 1px solid var(--border);
+
+    transition: .4s;
+}
+
+.job:hover {
+    background: rgba(255,255,255,.015);
+
+    padding-left: 20px;
+
+    padding-right: 20px;
+}
+
+.job-year {
+    color: #666;
+
+    font-size: 12px;
+}
+
+.job-title {
+    font-family: "Space Grotesk";
+
+    font-size: 34px;
+
+    letter-spacing: -1.5px;
+}
+
+.job-company {
+    color: #666;
+
+    margin-top: 5px;
+}
+
+.job-description {
+    max-width: 700px;
+
+    color: #888;
+
+    margin-top: 25px;
+
+    font-size: 15px;
+}
+
+.job-tags {
+    display: flex;
+
+    gap: 7px;
+
+    flex-wrap: wrap;
+
+    margin-top: 25px;
+}
+
+.tag {
+    border: 1px solid var(--border);
+
+    padding: 6px 10px;
+
+    border-radius: 100px;
+
+    font-size: 10px;
+
+    color: #888;
+}
+
+.job-type {
+    text-align: right;
+
+    color: #555;
+
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   ACHIEVEMENTS
+========================================================= */
+
+.achievement-grid {
+    margin-top: 75px;
+
+    display: grid;
+
+    grid-template-columns: repeat(3,1fr);
+
+    gap: 15px;
+}
+
+.achievement {
+    min-height: 310px;
+
+    padding: 30px;
+
+    border: 1px solid var(--border);
+
+    transition: .4s;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-between;
+}
+
+.achievement:hover {
+    background: #101010;
+
+    transform: translateY(-7px);
+}
+
+.achievement-number {
+    font-family: "Space Grotesk";
+
+    font-size: 55px;
+
+    letter-spacing: -4px;
+}
+
+.achievement h3 {
+    font-family: "Space Grotesk";
+
+    font-size: 20px;
+}
+
+.achievement p {
+    color: #666;
+
+    font-size: 13px;
+
+    margin-top: 8px;
+}
+
+
+/* =========================================================
+   CASE STUDIES
+========================================================= */
+
+.cases {
+    background: #0a0a0a;
+}
+
+.case-grid {
+    margin-top: 75px;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 18px;
+}
+
+.case {
+    min-height: 510px;
+
+    border: 1px solid var(--border);
+
+    padding: 35px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: flex-end;
+
+    background:
+        radial-gradient(
+            circle at 80% 20%,
+            rgba(255,255,255,.08),
+            transparent 30%
+        );
+}
+
+.case::before {
+    content: "";
+
+    position: absolute;
+
+    width: 280px;
+
+    height: 280px;
+
+    border: 1px solid rgba(255,255,255,.06);
+
+    border-radius: 50%;
+
+    top: 65px;
+
+    right: 65px;
+}
+
+.case-number {
+    position: absolute;
+
+    top: 30px;
+
+    left: 30px;
+
+    color: #555;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+}
+
+.case h3 {
+    position: relative;
+
+    font-family: "Space Grotesk";
+
+    font-size: 42px;
+
+    letter-spacing: -2px;
+}
+
+.case p {
+    position: relative;
+
+    max-width: 530px;
+
+    color: #777;
+
+    margin-top: 12px;
+}
+
+.case-result {
+    position: relative;
+
+    margin-top: 25px;
+
+    font-family: "Space Grotesk";
+
+    font-size: 20px;
+}
+
+
+/* =========================================================
+   EXPERTISE
+========================================================= */
+
+.skills {
+    margin-top: 70px;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    column-gap: 80px;
+}
+
+.skill {
+    padding: 22px 0;
+
+    border-bottom: 1px solid var(--border);
+}
+
+.skill-top {
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-bottom: 12px;
+}
+
+.skill-name {
+    font-size: 14px;
+}
+
+.skill-percent {
+    color: #555;
+
+    font-size: 10px;
+}
+
+.skill-bar {
+    height: 2px;
+
+    background: #1d1d1d;
+}
+
+.skill-progress {
+    height: 100%;
+
+    width: 0;
+
+    background: white;
+
+    transition: width 1.5s cubic-bezier(.16,1,.3,1);
+}
+
+
+/* =========================================================
+   EDUCATION
+========================================================= */
+
+.education {
+    background: #0a0a0a;
+}
+
+.education-grid {
+    margin-top: 70px;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 18px;
+}
+
+.education-card {
+    padding: 40px;
+
+    min-height: 300px;
+
+    border: 1px solid var(--border);
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-between;
+}
+
+.degree {
+    font-family: "Space Grotesk";
+
+    font-size: 32px;
+
+    letter-spacing: -1px;
+}
+
+.school {
+    color: #777;
+
+    margin-top: 8px;
+}
+
+.education-description {
+    color: #777;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   CONTACT
+========================================================= */
+
+.contact {
+    min-height: 85vh;
+
+    display: flex;
+
+    align-items: center;
+}
+
+.contact-title {
+    font-family: "Space Grotesk";
+
+    font-size: clamp(65px,10vw,145px);
+
+    line-height: .82;
+
+    letter-spacing: -7px;
+}
+
+.contact-title span {
+    color: #555;
+}
+
+.contact-bottom {
+    margin-top: 70px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: end;
+}
+
+.contact-info {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+.contact-email {
+    font-size: 20px;
+}
+
+.contact-location {
+    color: #555;
+
+    font-size: 13px;
+}
+
+.socials {
+    display: flex;
+
+    gap: 9px;
+}
+
+.social {
+    width: 45px;
+
+    height: 45px;
+
+    display: grid;
+
+    place-items: center;
+
+    border: 1px solid var(--border);
+
+    border-radius: 50%;
+
+    color: #888;
+
+    transition: .3s;
+}
+
+.social:hover {
+    background: white;
+
+    color: black;
+
+    transform: translateY(-4px);
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+    border-top: 1px solid var(--border);
+
+    padding: 28px 30px;
+
+    color: #444;
+
+    font-size: 11px;
+}
+
+.footer-inner {
+    max-width: var(--max);
+
+    margin: auto;
+
+    display: flex;
+
+    justify-content: space-between;
+}
+
+
+/* =========================================================
+   ANIMATION
+========================================================= */
+
+.reveal {
+    opacity: 0;
+
+    transform: translateY(35px);
+
+    transition:
+        opacity .9s ease,
+        transform .9s cubic-bezier(.16,1,.3,1);
+}
+
+.reveal.active {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width: 900px) {
+
+    nav {
+        padding: 18px 20px;
+    }
+
+    .nav-links {
+        position: fixed;
+
+        top: 70px;
+
+        left: 20px;
+        right: 20px;
+
+        padding: 25px;
+
+        background: #101010;
+
+        border: 1px solid var(--border);
+
+        border-radius: 12px;
+
+        display: none;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    .hero {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .hero h1 {
+        letter-spacing: -4px;
+    }
+
+    section {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .stats {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .stat:nth-child(2) {
+        border-right: none;
+    }
+
+    .stat:nth-child(-n+2) {
+        border-bottom: 1px solid var(--border);
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+
+        gap: 50px;
+    }
+
+    .job {
+        grid-template-columns: 1fr;
+
+        gap: 15px;
+    }
+
+    .job-type {
+        text-align: left;
+    }
+
+    .achievement-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .skills {
+        grid-template-columns: 1fr;
+    }
+
+    .education-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-bottom {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 35px;
+    }
+}
+
+
+@media(max-width: 600px) {
+
+    .hero h1 {
+        font-size: 59px;
+    }
+
+    .section-title {
+        font-size: 46px;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .stat {
+        border-right: none;
+
+        border-bottom: 1px solid var(--border);
+    }
+
+    .stat:last-child {
+        border-bottom: none;
+    }
+
+    .achievement-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .case-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .case {
+        min-height: 430px;
+    }
+
+    .case h3 {
+        font-size: 34px;
+    }
+
+    .contact-title {
+        font-size: 72px;
+
+        letter-spacing: -4px;
+    }
+
+    .footer-inner {
+        flex-direction: column;
+
+        gap: 10px;
+    }
+}
+
+</style>
 </head>
+
 
 <body>
 
-    <!-- NAVIGATION -->
-
-    <nav>
-        <div class="nav-container">
-            <div class="logo">Arafat Dawan</div>
-
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
+<!-- CURSOR -->
+<div class="cursor"></div>
 
 
-    <!-- HERO -->
+<!-- =========================================================
+     NAV
+========================================================= -->
 
-    <header class="hero">
-        <div class="hero-content">
+<nav id="navbar">
 
-            <div class="hello">
-                HELLO, I'M
-            </div>
+    <div class="nav-inner">
 
-            <h1>
-                Arafat <span>Dawan</span>
-            </h1>
+        <a href="#top" class="logo">
+            AD<span>.</span>
+        </a>
 
-            <div class="hero-subtitle">
-                Digital Marketing & Social Media Manager
-            </div>
+        <div class="nav-links" id="navLinks">
 
-            <p class="hero-description">
-                Digital media professional with 5+ years of experience in
-                digital content management, social media strategy, audience
-                engagement, SEO, PR campaigns and digital marketing.
-            </p>
+            <a href="#about">About</a>
 
-            <div class="buttons">
-                <a href="#experience" class="btn btn-primary">
-                    View My Experience
-                </a>
+            <a href="#experience">Experience</a>
 
-                <a href="mailto:dawanprem@gmail.com" class="btn btn-secondary">
-                    Contact Me
-                </a>
-            </div>
+            <a href="#work">Work</a>
+
+            <a href="#expertise">Expertise</a>
+
+            <a href="#education">Education</a>
+
+            <a href="#contact" class="nav-contact">
+                Let's Talk
+            </a>
 
         </div>
-    </header>
+
+        <button class="menu-btn" id="menuBtn">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+    </div>
+
+</nav>
 
 
-    <main>
 
-        <!-- ABOUT -->
+<main id="top">
 
-        <section id="about">
-            <div class="container">
 
-                <div class="section-title">
-                    <span>About Me</span>
-                    <h2>Digital Media Professional</h2>
-                </div>
+<!-- =========================================================
+     HERO
+========================================================= -->
 
-                <div class="about-grid">
+<section class="hero">
 
-                    <div class="card about-text">
+    <div class="hero-inner">
 
-                        <p>
-                            I am a Digital Marketing and Social Media Manager
-                            with extensive experience in digital content,
-                            audience engagement, social media strategy and
-                            online marketing.
-                        </p>
+        <div class="location reveal">
 
-                        <p>
-                            My professional background includes working with
-                            leading media organizations in Bangladesh, where
-                            I have worked on digital content strategy,
-                            social media platforms, SEO, analytics and
-                            audience growth.
-                        </p>
+            <i class="fa-solid fa-location-dot"></i>
 
-                        <p>
-                            With a background in Computer Science and
-                            experience in media and communication, I combine
-                            technical knowledge with creative and strategic
-                            thinking.
-                        </p>
+            Madrid, Spain · Available for Digital Projects
 
-                    </div>
+        </div>
 
-                    <div class="card">
 
-                        <ul class="info-list">
+        <h1 class="reveal">
 
-                            <li>
-                                <strong>Specialization</strong>
-                                Digital Marketing & Social Media
-                            </li>
+            I BUILD
 
-                            <li>
-                                <strong>Experience</strong>
-                                5+ Years
-                            </li>
+            <span class="outline">
+                DIGITAL
+            </span>
 
-                            <li>
-                                <strong>Industry</strong>
-                                Digital Media & Communications
-                            </li>
+            AUDIENCES.
 
-                            <li>
-                                <strong>Email</strong>
-                                dawanprem@gmail.com
-                            </li>
+        </h1>
 
-                        </ul>
 
-                    </div>
+        <div class="hero-sub reveal">
 
-                </div>
+            <strong>Arafat Dawan</strong> is a Digital Media Strategist,
+            Social Media Growth Specialist and Technology-Driven Storyteller
+            with 5+ years of experience scaling audiences, leading digital
+            teams and building high-impact media ecosystems.
+
+        </div>
+
+
+        <div class="hero-buttons reveal">
+
+            <a href="#work" class="btn btn-primary">
+
+                Explore My Work
+
+                <i class="fa-solid fa-arrow-down"></i>
+
+            </a>
+
+
+            <a href="mailto:contact@arafatdawan.info.bd" class="btn">
+
+                Contact Me
+
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="scroll">
+        Scroll to explore ↓
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     STATS
+========================================================= -->
+
+<section class="stats">
+
+    <div class="stats-grid">
+
+
+        <div class="stat reveal">
+
+            <div class="stat-number">
+                25M+
+            </div>
+
+            <div class="stat-label">
+                YouTube audience
+            </div>
+
+        </div>
+
+
+        <div class="stat reveal">
+
+            <div class="stat-number">
+                18M+
+            </div>
+
+            <div class="stat-label">
+                Facebook audience
+            </div>
+
+        </div>
+
+
+        <div class="stat reveal">
+
+            <div class="stat-number">
+                178M
+            </div>
+
+            <div class="stat-label">
+                Views on one Instagram video
+            </div>
+
+        </div>
+
+
+        <div class="stat reveal">
+
+            <div class="stat-number">
+                5+
+            </div>
+
+            <div class="stat-label">
+                Years in digital media
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     ABOUT
+========================================================= -->
+
+<section id="about">
+
+    <div class="container">
+
+        <div class="section-label reveal">
+            01 — About
+        </div>
+
+
+        <h2 class="section-title reveal">
+
+            Media meets
+            <span>technology.</span>
+
+        </h2>
+
+
+        <div class="about-grid">
+
+
+            <div class="about-text reveal">
+
+                <p>
+                    I started my professional journey at
+                    <strong>Somoy TV in 2021</strong> as a trainee.
+                    Over the next four years, I earned four promotions
+                    and became Department In-Charge.
+                </p>
+
+                <p>
+                    My work has focused on the technical and strategic
+                    side of social media — from troubleshooting platform
+                    issues and maintaining page quality to improving
+                    reach, engagement, distribution and audience growth.
+                </p>
+
+                <p>
+                    Later, as a <strong>Manager at Desh Television</strong>,
+                    I led a team of 32 people and worked on rebuilding
+                    the organisation's digital presence.
+                </p>
+
+                <p>
+                    Today, I work as a consultant, helping content creators,
+                    public figures and campaigns with the technical and
+                    strategic side of their digital platforms.
+                </p>
 
             </div>
-        </section>
 
 
-        <!-- EXPERIENCE -->
+            <div class="about-list reveal">
 
-        <section id="experience">
-            <div class="container">
 
-                <div class="section-title">
-                    <span>Career</span>
-                    <h2>Professional Experience</h2>
-                    <p>
-                        My professional journey in digital media and content management.
+                <div class="about-item">
+
+                    <span>Based in</span>
+
+                    <span>Madrid, Spain</span>
+
+                </div>
+
+
+                <div class="about-item">
+
+                    <span>Experience</span>
+
+                    <span>5+ Years</span>
+
+                </div>
+
+
+                <div class="about-item">
+
+                    <span>Focus</span>
+
+                    <span>Digital Media & Growth</span>
+
+                </div>
+
+
+                <div class="about-item">
+
+                    <span>Platforms</span>
+
+                    <span>Facebook · YouTube · IG · TikTok</span>
+
+                </div>
+
+
+                <div class="about-item">
+
+                    <span>Leadership</span>
+
+                    <span>32+ People</span>
+
+                </div>
+
+
+                <div class="about-item">
+
+                    <span>Current Role</span>
+
+                    <span>Digital Consultant</span>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     EXPERIENCE
+========================================================= -->
+
+<section id="experience" class="experience">
+
+    <div class="container">
+
+        <div class="section-label reveal">
+            02 — Experience
+        </div>
+
+
+        <h2 class="section-title reveal">
+
+            From trainee
+            <span>to strategist.</span>
+
+        </h2>
+
+
+        <div class="timeline">
+
+
+            <!-- SOMOY -->
+
+            <article class="job reveal">
+
+                <div class="job-year">
+                    2021 — 2025
+                </div>
+
+
+                <div>
+
+                    <h3 class="job-title">
+                        Somoy TV
+                    </h3>
+
+                    <div class="job-company">
+                        Trainee → Department In-Charge
+                    </div>
+
+
+                    <p class="job-description">
+
+                        Started as a trainee and progressed through
+                        four promotions to become Department In-Charge.
+                        Worked deeply across Facebook, YouTube,
+                        Instagram, TikTok and other digital platforms.
+
                     </p>
-                </div>
 
-                
 
-               <div class="timeline">
+                    <div class="job-tags">
 
-                    <div class="timeline-item">
+                        <span class="tag">
+                            4 Promotions
+                        </span>
 
-                        <div class="timeline-date">
-                            2024 – 2025
-                        </div>
+                        <span class="tag">
+                            18M+ Facebook
+                        </span>
 
-                        <div class="timeline-title">
-                            Manager (Digital Content)
-                        </div>
+                        <span class="tag">
+                            25M+ YouTube
+                        </span>
 
-                        <div class="timeline-company">
-                            Desh Television
-                        </div>
+                        <span class="tag">
+                            1M+ TikTok
+                        </span>
 
-                        <p class="timeline-description">
-                            Managed digital content operations, audience
-                            engagement initiatives and multi-platform digital
-                            campaigns. Worked on content strategy, social media
-                            distribution and digital audience development.
-                        </p>
-
-                    </div>
-
-                    <div class="timeline-item">
-
-                        <div class="timeline-date">
-                            2021 – 2024
-                        </div>
-
-                        <div class="timeline-title">
-                            In-Charge (Digital Content Management)
-                        </div>
-
-                        <div class="timeline-company">
-                            Somoy Media Limited
-                        </div>
-
-                        <p class="timeline-description">
-                            Led digital content management across major social
-                            and video platforms. Worked on SEO, YouTube and
-                            Facebook content strategy, performance monitoring,
-                            analytics and audience engagement.
-                        </p>
+                        <span class="tag">
+                            178M Instagram
+                        </span>
 
                     </div>
 
                 </div>
 
-            </div>
-        </section>
 
-
-        <!-- SKILLS -->
-
-        <section id="skills">
-            <div class="container">
-
-                <div class="section-title">
-                    <span>Expertise</span>
-                    <h2>Skills & Capabilities</h2>
+                <div class="job-type">
+                    Digital Media
                 </div>
 
-                <div class="skills-grid">
+            </article>
 
-                    <div class="skill">
-                        <h3>Digital Marketing</h3>
-                        <p>
-                            Digital campaigns, audience growth and online
-                            marketing strategy.
-                        </p>
-                    </div>
 
-                    <div class="skill">
-                        <h3>Social Media</h3>
-                        <p>
-                            Facebook, YouTube and multi-platform social media
-                            management.
-                        </p>
-                    </div>
 
-                    <div class="skill">
-                        <h3>SEO</h3>
-                        <p>
-                            Search optimization, content optimization and
-                            performance analysis.
-                        </p>
-                    </div>
+            <!-- DESH -->
 
-                    <div class="skill">
-                        <h3>Content Strategy</h3>
-                        <p>
-                            Content planning, editorial strategy and audience-
-                            focused storytelling.
-                        </p>
-                    </div>
+            <article class="job reveal">
 
-                    <div class="skill">
-                        <h3>Analytics</h3>
-                        <p>
-                            Performance monitoring, audience insights and
-                            data-driven decision making.
-                        </p>
-                    </div>
-
-                    <div class="skill">
-                        <h3>PR & Campaigns</h3>
-                        <p>
-                            Digital PR campaigns, brand communication and
-                            audience engagement.
-                        </p>
-                    </div>
-
+                <div class="job-year">
+                    2024 — 2025
                 </div>
 
-            </div>
-        </section>
 
+                <div>
 
-        <!-- EDUCATION -->
+                    <h3 class="job-title">
+                        Desh Television
+                    </h3>
 
-        <section id="education">
-            <div class="container">
-
-                <div class="section-title">
-                    <span>Education</span>
-                    <h2>Academic Background</h2>
-                </div>
-
-                <div class="education-grid">
-
-                    <div class="education-card">
-
-                        <h3>Master's in Film and Media</h3>
-
-                        <div class="degree">
-                            University of Copenhagen
-                        </div>
-
-                        <p>
-                            Film, media, communication and contemporary
-                            digital media studies.
-                        </p>
-
+                    <div class="job-company">
+                        Manager
                     </div>
 
 
-                    <div class="education-card">
+                    <p class="job-description">
 
-                        <h3>
-                            B.Sc. in Computer Science and Engineering
-                        </h3>
+                        Led a 32-member team responsible for digital
+                        media operations. Worked on improving the
+                        organisation's Facebook, YouTube, TikTok and
+                        broader social media performance.
 
-                        <div class="degree">
-                            Bangladesh University of Business and Technology
-                        </div>
-
-                        <p>
-                            Computer Science, software development and
-                            technology-focused studies.
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </div>
-        </section>
-
-
-        <!-- CONTACT -->
-
-        <section id="contact">
-            <div class="container">
-
-                <div class="contact-box">
-
-                    <h2>Let's Work Together</h2>
-
-                    <p>
-                        Interested in collaborating, discussing digital media
-                        opportunities or working on a new project?
                     </p>
 
-                    <a
-                        href="mailto:dawanprem@gmail.com"
-                        class="btn btn-primary"
-                    >
-                        Send Me an Email
-                    </a>
 
-                    <div class="social-links">
+                    <div class="job-tags">
 
-                        <!-- Replace these URLs with your actual profiles -->
+                        <span class="tag">
+                            32 People
+                        </span>
 
-                        <a href="https://www.linkedin.com/in/arafatdawan/" target="_blank">
-                            LinkedIn
-                        </a>
+                        <span class="tag">
+                            2M+ Growth
+                        </span>
 
-                        <a href="https://www.facebook.com/ap.dawan/" target="_blank">
-                            Facebook
-                        </a>
+                        <span class="tag">
+                            1M+ FB / YouTube
+                        </span>
 
-                        <a href="https://wa.me/+4591456838" target="_blank">
-                            WhatsApp
-                        </a>
+                        <span class="tag">
+                            400K TikTok
+                        </span>
+
+                        <span class="tag">
+                            1M TikTok Likes
+                        </span>
 
                     </div>
 
                 </div>
 
+
+                <div class="job-type">
+                    Management
+                </div>
+
+            </article>
+
+
+
+            <!-- FANCIUM -->
+
+            <article class="job reveal">
+
+                <div class="job-year">
+                    2025 — Present
+                </div>
+
+
+                <div>
+
+                    <h3 class="job-title">
+                        Fancium
+                    </h3>
+
+                    <div class="job-company">
+                        Consultant
+                    </div>
+
+
+                    <p class="job-description">
+
+                        Consulting on digital platforms, social media
+                        technology, audience growth and PR operations
+                        for content creators, public figures and
+                        political campaigns.
+
+                    </p>
+
+
+                    <div class="job-tags">
+
+                        <span class="tag">
+                            Digital Consulting
+                        </span>
+
+                        <span class="tag">
+                            Technical Social Media
+                        </span>
+
+                        <span class="tag">
+                            Digital PR
+                        </span>
+
+                        <span class="tag">
+                            Audience Growth
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="job-type">
+                    Consulting
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     ACHIEVEMENTS
+========================================================= -->
+
+<section>
+
+    <div class="container">
+
+        <div class="section-label reveal">
+            03 — Achievements
+        </div>
+
+
+        <h2 class="section-title reveal">
+
+            Numbers tell
+            <span>the story.</span>
+
+        </h2>
+
+
+        <div class="achievement-grid">
+
+
+            <div class="achievement reveal">
+
+                <div class="achievement-number">
+                    25M+
+                </div>
+
+                <div>
+
+                    <h3>
+                        YouTube Audience
+                    </h3>
+
+                    <p>
+                        Worked during the growth journey of
+                        Somoy TV's YouTube ecosystem.
+                    </p>
+
+                </div>
+
             </div>
-        </section>
-
-    </main>
 
 
-    <!-- FOOTER -->
+            <div class="achievement reveal">
 
-    <footer>
-        <p>
-            © 2026 Arafat Dawan. All Rights Reserved.
-        </p>
-    </footer>
+                <div class="achievement-number">
+                    18M+
+                </div>
+
+                <div>
+
+                    <h3>
+                        Facebook Growth
+                    </h3>
+
+                    <p>
+                        Helped grow the Facebook community from
+                        approximately 12M to 18M during my tenure.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="achievement reveal">
+
+                <div class="achievement-number">
+                    178M
+                </div>
+
+                <div>
+
+                    <h3>
+                        Instagram Views
+                    </h3>
+
+                    <p>
+                        One Instagram video reached approximately
+                        178 million views.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="achievement reveal">
+
+                <div class="achievement-number">
+                    1M+
+                </div>
+
+                <div>
+
+                    <h3>
+                        TikTok Followers
+                    </h3>
+
+                    <p>
+                        Built a TikTok presence from the ground up
+                        to more than one million followers.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="achievement reveal">
+
+                <div class="achievement-number">
+                    32
+                </div>
+
+                <div>
+
+                    <h3>
+                        Team Members
+                    </h3>
+
+                    <p>
+                        Led a 32-member digital media team at
+                        Desh Television.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="achievement reveal">
+
+                <div class="achievement-number">
+                    4×
+                </div>
+
+                <div>
+
+                    <h3>
+                        Promotions
+                    </h3>
+
+                    <p>
+                        Promoted four times in four years at
+                        Somoy TV.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     CASE STUDIES
+========================================================= -->
+
+<section id="work" class="cases">
+
+    <div class="container">
+
+        <div class="section-label reveal">
+            04 — Selected Work
+        </div>
+
+
+        <h2 class="section-title reveal">
+
+            Turning platforms
+            <span>into growth engines.</span>
+
+        </h2>
+
+
+        <div class="case-grid">
+
+
+            <article class="case reveal">
+
+                <span class="case-number">
+                    CASE / 01
+                </span>
+
+                <div>
+
+                    <h3>
+                        Somoy TV
+                    </h3>
+
+                    <p>
+                        Five years of hands-on experience managing
+                        large-scale digital media operations across
+                        Facebook, YouTube, Instagram, TikTok and
+                        other platforms.
+                    </p>
+
+                    <div class="case-result">
+                        25M+ YouTube · 18M+ Facebook
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <article class="case reveal">
+
+                <span class="case-number">
+                    CASE / 02
+                </span>
+
+                <div>
+
+                    <h3>
+                        Desh TV
+                    </h3>
+
+                    <p>
+                        Managed a 32-person team and worked on
+                        rebuilding the digital presence of the
+                        television network.
+                    </p>
+
+                    <div class="case-result">
+                        2M+ Audience Growth
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <article class="case reveal">
+
+                <span class="case-number">
+                    CASE / 03
+                </span>
+
+                <div>
+
+                    <h3>
+                        Political PR
+                    </h3>
+
+                    <p>
+                        Worked on the PR and technical digital
+                        operations for a successful Bangladesh
+                        parliamentary election campaign.
+                    </p>
+
+                    <div class="case-result">
+                        2M Reach · 5 Months
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <article class="case reveal">
+
+                <span class="case-number">
+                    CASE / 04
+                </span>
+
+                <div>
+
+                    <h3>
+                        TikTok Growth
+                    </h3>
+
+                    <p>
+                        Built and developed TikTok operations from
+                        the beginning, focusing on distribution,
+                        engagement and audience behaviour.
+                    </p>
+
+                    <div class="case-result">
+                        1M+ Followers
+                    </div>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     EXPERTISE
+========================================================= -->
+
+<section id="expertise">
+
+    <div class="container">
+
+        <div class="section-label reveal">
+            05 — Expertise
+        </div>
+
+
+        <h2 class="section-title reveal">
+
+            Strategy,
+            <span>technology & growth.</span>
+
+        </h2>
+
+
+        <div class="skills">
+
+
+            <div class="skill reveal">
+
+                <div class="skill-top">
+
+                    <span class="skill-name">
+                        Social Media Strategy
+                    </span>
+
+                    <span class="skill-percent">
+                        98%
+                    </span>
+
+                </div>
+
+                <div class="skill-bar">
+
+                    <div
+                        class="skill-progress"
+                        data-width="98%">
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="skill reveal">
+
+                <div class="skill-top">
+
+                    <span class="skill-name">
+                        Audience Growth
+                    </span>
+
+                    <span class="skill-percent">
+                        97%
+                    </span>
+
+                </div>
+
+                <div class="skill-bar">
+
+                    <div
+                        class="skill-progress"
+                        data-width="97%">
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="skill reveal">
+
+                <div class="skill-top">
+
+                    <span class="skill-name">
+                        Facebook
+                    </span>
+
+                    <span class="skill-percent">
+                        98%
+                    </span>
+
+                </div>
+
+                <div class="skill-bar">
+
+                    <div
+                        class="skill-progress"
+                        data-width="98%">
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="skill reveal">
+
+                <div class="skill-top">
+
+                    <span class="skill-name">
+                        YouTube
+                    </span>
+
+                    <span class="skill-percent">
+                        98%
+                    </span>
+
+                </div>
+
+                <div class="skill-bar">
+
+                    <div
+                        class="skill-progress"
+                        data-width="98%">
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="skill reveal">
+
+                <div class="skill-top">
+
+                    <span class="skill-name">
+                        TikTok
+                    </span>
+
+                    <span class="skill-percent">
+                        95%
+                    </span>
+
+                </div>
+
+                <div class="skill-bar">
+
+                    <div
+                        class="skill-progress"
+                        data-width="95%">
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="skill reveal">
+
+                <div class="skill-top">
+
+                    <span class="skill-name">
+                        Instagram
+                    </span>
+
+                    <span class="skill-percent">
+                        95%
+                    </span>
+
+                </div>
+
+                <div class="skill-bar">
+
+                    <div
+                        class="skill-progress"
+                        data-width="95%">
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="skill reveal">
+
+                <div class="skill-top">
+
+                    <span class="skill-name">
+                        Digital PR
+                    </span>
+
+                    <span class="skill-percent">
+                        94%
+                    </span>
+
+                </div>
+
+                <div class="skill-bar">
+
+                    <div
+                        class="skill-progress"
+                        data-width="94%">
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="skill reveal">
+
+                <div class="skill-top">
+
+                    <span class="skill-name">
+                        Front-End Web Development
+                    </span>
+
+                    <span class="skill-percent">
+                        85%
+                    </span>
+
+                </div>
+
+                <div class="skill-bar">
+
+                    <div
+                        class="skill-progress"
+                        data-width="85%">
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="skill reveal">
+
+                <div class="skill-top">
+
+                    <span class="skill-name">
+                        Cloudflare & DNS
+                    </span>
+
+                    <span class="skill-percent">
+                        85%
+                    </span>
+
+                </div>
+
+                <div class="skill-bar">
+
+                    <div
+                        class="skill-progress"
+                        data-width="85%">
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="skill reveal">
+
+                <div class="skill-top">
+
+                    <span class="skill-name">
+                        Content Strategy
+                    </span>
+
+                    <span class="skill-percent">
+                        96%
+                    </span>
+
+                </div>
+
+                <div class="skill-bar">
+
+                    <div
+                        class="skill-progress"
+                        data-width="96%">
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     EDUCATION
+========================================================= -->
+
+<section id="education" class="education">
+
+    <div class="container">
+
+        <div class="section-label reveal">
+            06 — Education
+        </div>
+
+
+        <h2 class="section-title reveal">
+
+            Engineering brain.
+            <span>Media soul.</span>
+
+        </h2>
+
+
+        <div class="education-grid">
+
+
+            <div class="education-card reveal">
+
+                <div>
+
+                    <div class="degree">
+                        Master's Degree
+                    </div>
+
+                    <div class="school">
+                        Film and Media — University of Copenhagen
+                    </div>
+
+                </div>
+
+
+                <div class="education-description">
+
+                    Film, media, storytelling, communication and
+                    contemporary media ecosystems.
+
+                </div>
+
+            </div>
+
+
+            <div class="education-card reveal">
+
+                <div>
+
+                    <div class="degree">
+                        B.Sc. Engineering
+                    </div>
+
+                    <div class="school">
+                        Computer Science & Engineering —
+                        Bangladesh University of Business and Technology
+                    </div>
+
+                </div>
+
+
+                <div class="education-description">
+
+                    Computer science, software engineering,
+                    technology and technical problem solving.
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     LANGUAGES
+========================================================= -->
+
+<section>
+
+    <div class="container">
+
+        <div class="section-label reveal">
+            07 — Languages
+        </div>
+
+
+        <h2 class="section-title reveal">
+
+            Communicate
+            <span>without borders.</span>
+
+        </h2>
+
+
+        <div class="about-list" style="margin-top:70px;">
+
+
+            <div class="about-item reveal">
+
+                <span>
+                    Bengali
+                </span>
+
+                <span>
+                    Native
+                </span>
+
+            </div>
+
+
+            <div class="about-item reveal">
+
+                <span>
+                    English
+                </span>
+
+                <span>
+                    Professional
+                </span>
+
+            </div>
+
+
+            <div class="about-item reveal">
+
+                <span>
+                    Spanish
+                </span>
+
+                <span>
+                    Learning
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     CONTACT
+========================================================= -->
+
+<section id="contact" class="contact">
+
+    <div class="container">
+
+        <div class="section-label reveal">
+            08 — Contact
+        </div>
+
+
+        <h2 class="contact-title reveal">
+
+            LET'S
+
+            <br>
+
+            <span>BUILD.</span>
+
+        </h2>
+
+
+        <div class="contact-bottom reveal">
+
+
+            <div class="contact-info">
+
+                <a
+                    class="contact-email"
+                    href="mailto:contact@arafatdawan.info.bd">
+
+                    contact@arafatdawan.info.bd
+
+                </a>
+
+
+                <div class="contact-location">
+
+                    <i class="fa-solid fa-location-dot"></i>
+
+                    Madrid, Spain
+
+                </div>
+
+
+                <a
+                    href="tel:+34617094630"
+                    class="contact-location">
+
+                    <i class="fa-solid fa-phone"></i>
+
+                    +34 617 094 630
+
+                </a>
+
+            </div>
+
+
+            <div class="socials">
+
+
+                <a
+                    href="https://linkedin.com/in/arafatdawan"
+                    target="_blank"
+                    class="social"
+                    aria-label="LinkedIn">
+
+                    <i class="fa-brands fa-linkedin-in"></i>
+
+                </a>
+
+
+                <a
+                    href="https://facebook.com/ap.dawan"
+                    target="_blank"
+                    class="social"
+                    aria-label="Facebook">
+
+                    <i class="fa-brands fa-facebook-f"></i>
+
+                </a>
+
+
+                <a
+                    href="https://instagram.com/arafatdawan"
+                    target="_blank"
+                    class="social"
+                    aria-label="Instagram">
+
+                    <i class="fa-brands fa-instagram"></i>
+
+                </a>
+
+
+                <a
+                    href="https://github.com/arafatdawan"
+                    target="_blank"
+                    class="social"
+                    aria-label="GitHub">
+
+                    <i class="fa-brands fa-github"></i>
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+</main>
+
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer>
+
+    <div class="footer-inner">
+
+        <span>
+            © 2026 Arafat Dawan
+        </span>
+
+        <span>
+            Digital Media · Technology · Growth
+        </span>
+
+    </div>
+
+</footer>
+
+
+
+<script>
+
+/* =========================================================
+   CURSOR
+========================================================= */
+
+const cursor = document.querySelector(".cursor");
+
+document.addEventListener("mousemove", function(e) {
+
+    cursor.style.left = e.clientX + "px";
+
+    cursor.style.top = e.clientY + "px";
+
+});
+
+
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+const navbar = document.getElementById("navbar");
+
+window.addEventListener("scroll", function() {
+
+    if(window.scrollY > 40) {
+
+        navbar.classList.add("scrolled");
+
+    } else {
+
+        navbar.classList.remove("scrolled");
+
+    }
+
+});
+
+
+
+/* =========================================================
+   MOBILE MENU
+========================================================= */
+
+const menuBtn = document.getElementById("menuBtn");
+
+const navLinks = document.getElementById("navLinks");
+
+menuBtn.addEventListener("click", function() {
+
+    navLinks.classList.toggle("active");
+
+});
+
+
+document.querySelectorAll(".nav-links a").forEach(link => {
+
+    link.addEventListener("click", function() {
+
+        navLinks.classList.remove("active");
+
+    });
+
+});
+
+
+
+/* =========================================================
+   SCROLL REVEAL
+========================================================= */
+
+const observer = new IntersectionObserver(
+
+    entries => {
+
+        entries.forEach(entry => {
+
+            if(entry.isIntersecting) {
+
+                entry.target.classList.add("active");
+
+            }
+
+        });
+
+    },
+
+    {
+        threshold: .12
+    }
+
+);
+
+
+document.querySelectorAll(".reveal").forEach(element => {
+
+    observer.observe(element);
+
+});
+
+
+
+/* =========================================================
+   SKILL BARS
+========================================================= */
+
+const skillObserver = new IntersectionObserver(
+
+    entries => {
+
+        entries.forEach(entry => {
+
+            if(!entry.isIntersecting) return;
+
+            const progress =
+                entry.target.querySelector(".skill-progress");
+
+            if(progress) {
+
+                progress.style.width =
+                    progress.dataset.width;
+
+            }
+
+            skillObserver.unobserve(entry.target);
+
+        });
+
+    },
+
+    {
+        threshold: .3
+    }
+
+);
+
+
+document.querySelectorAll(".skill").forEach(skill => {
+
+    skillObserver.observe(skill);
+
+});
+
+
+
+/* =========================================================
+   MAGNETIC BUTTONS
+========================================================= */
+
+document
+.querySelectorAll(".btn, .social")
+.forEach(element => {
+
+    element.addEventListener("mousemove", function(e) {
+
+        const rect =
+            this.getBoundingClientRect();
+
+        const x =
+            e.clientX - rect.left - rect.width / 2;
+
+        const y =
+            e.clientY - rect.top - rect.height / 2;
+
+        this.style.transform =
+            `translate(${x * .12}px, ${y * .12}px)`;
+
+    });
+
+
+    element.addEventListener("mouseleave", function() {
+
+        this.style.transform = "";
+
+    });
+
+});
+
+
+
+/* =========================================================
+   CURRENT YEAR
+========================================================= */
+
+const year =
+    new Date().getFullYear();
+
+document.querySelector("footer span").textContent =
+    `© ${year} Arafat Dawan`;
+
+</script>
 
 </body>
 </html>
